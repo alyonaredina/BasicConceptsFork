@@ -20,6 +20,12 @@ function solveEquation(a, b, c) {
   return arr;
 }
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  
+
+function calculateTotalMortgage(percent, contribution, amount, countMonths) {  
+  let loanBody = amount - contribution;
+  let monthlyPercent = percent / 100 / 12;
+  let monthlyPayment = loanBody * (monthlyPercent + (monthlyPercent / (((1 + monthlyPercent) ** countMonths) - 1)));
+  let totalAmount = (monthlyPayment * countMonths).toFixed(2);
+  return +totalAmount;
 }
+
