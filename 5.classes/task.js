@@ -15,11 +15,11 @@ class PrintEditionItem {   //печатное издание
     }
 
     set state(number) {
-        if(this.state < 0) {
+        if(number < 0) {
             return this._state = 0;
         } 
 
-        if(this.state > 100) {
+        if(number > 100) {
             return this._state = 100;
 
         } else{
